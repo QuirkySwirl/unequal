@@ -4,6 +4,10 @@ import { Coins } from 'lucide-react';
 import axios from 'axios'; // Import axios
 import { WealthCard } from './components/WealthCard';
 import { Playground } from './pages/Playground';
+import { AboutPage } from './pages/AboutPage'; // Import AboutPage
+import { TermsOfServicePage } from './pages/TermsOfServicePage'; // Import TermsOfServicePage
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'; // Import PrivacyPolicyPage
+import { Layout } from './components/Layout'; // Import Layout
 import allBillionaires from './data/billionaires.json'; // Import full list from JSON
 import { companies as initialCompanies } from './data/companies'; // Rename import
 import { Billionaire, Company } from './types'; // Import types
@@ -152,8 +156,11 @@ function Home() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/playground/:type/:id" element={<Playground />} />
+      <Route path="/" element={<Layout><Home /></Layout>} />
+      <Route path="/playground/:type/:id" element={<Layout><Playground /></Layout>} />
+      <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+      <Route path="/terms" element={<Layout><TermsOfServicePage /></Layout>} />
+      <Route path="/privacy" element={<Layout><PrivacyPolicyPage /></Layout>} />
     </Routes>
   );
 }
