@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "1",
+    "name": "Bernard Arnault & family",
+    "netWorth": 233,
+    "company": "LVMH",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Bernard_Arnault_%282%29_-_2017_%28cropped%29.jpg",
+    "country": "France"
+  },
+  {
+    "id": "2",
+    "name": "Elon Musk",
+    "netWorth": 195,
+    "company": "Tesla",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Elon_Musk_2015.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "3",
+    "name": "Jeff Bezos",
+    "netWorth": 194,
+    "company": "Amazon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "4",
+    "name": "Mark Zuckerberg",
+    "netWorth": 177,
+    "company": "Meta Platforms",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "5",
+    "name": "Larry Ellison",
+    "netWorth": 141,
+    "company": "Oracle Corporation",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Larry_Ellison_picture.png/800px-Larry_Ellison_picture.png",
+    "country": "United States"
+  },
+  {
+    "id": "6",
+    "name": "Warren Buffett",
+    "netWorth": 133,
+    "company": "Finance & Investments",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "7",
+    "name": "Bill Gates",
+    "netWorth": 128,
+    "company": "Technology",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Bill_Gates_-_2023_-_P062021-967902_%28cropped%29.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "8",
+    "name": "Steve Ballmer",
+    "netWorth": 121,
+    "company": "Technology",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Steve_ballmer_2007_outdoors2.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "9",
+    "name": "Mukesh Ambani",
+    "netWorth": 116,
+    "company": "Diversified",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Mukesh_Ambani.jpg",
+    "country": "India"
+  },
+  {
+    "id": "10",
+    "name": "Larry Page",
+    "netWorth": 114,
+    "company": "Technology",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "11",
+    "name": "Sergey Brin",
+    "netWorth": 110,
+    "company": "Technology",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Sergey_Brin_Ted_2010.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "12",
+    "name": "Michael Bloomberg",
+    "netWorth": 106,
+    "company": "Finance & Investments",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Michael_Bloomberg_by_Gage_Skidmore_%28cropped%29.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "13",
+    "name": "Amancio Ortega",
+    "netWorth": 103,
+    "company": "Fashion & Retail",
+    "image": "https://imageio.forbes.com/specials-images/imageserve/5c76b94131358e35dd27748e/0x0.jpg?format=jpg&crop=2053,2053,x179,y216,safe&height=416&width=416&fit=bounds",
+    "country": "Spain"
+  },
+  {
+    "id": "14",
+    "name": "Carlos Slim Helu & family",
+    "netWorth": 102,
+    "company": "Telecom",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Carlos_Slim_%2845680472234%29_%28cropped%29.jpg/500px-Carlos_Slim_%2845680472234%29_%28cropped%29.jpg",
+    "country": "Mexico"
+  },
+  {
+    "id": "15",
+    "name": "Francoise Bettencourt Meyers & family",
+    "netWorth": 99.5,
+    "company": "Fashion & Retail",
+    "image": "https://imageio.forbes.com/specials-images/imageserve/605e26e3c65f7c2596bd3e15/0x0.jpg?format=jpg&crop=1080,1080,x0,y0,safe&height=416&width=416&fit=bounds",
+    "country": "France"
+  },
+  {
+    "id": "16",
+    "name": "Michael Dell",
+    "netWorth": 91,
+    "company": "Technology",
+    "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/landing-page/who-we-are/global/who-we-are-global-lp-image-csuite-michael-dell.psd?fmt=png-alpha&wid=850&hei=680",
+    "country": "United States"
+  },
+  {
+    "id": "17",
+    "name": "Gautam Adani",
+    "netWorth": 84,
+    "company": "Diversified",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Gautam_Adani.jpg",
+    "country": "India"
+  },
+  {
+    "id": "18",
+    "name": "Jim Walton & family",
+    "netWorth": 78.4,
+    "company": "Fashion & Retail",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Jim_Walton_attends_shareholders_meeting.jpg/500px-Jim_Walton_attends_shareholders_meeting.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "19",
+    "name": "Rob Walton & family",
+    "netWorth": 77.4,
+    "company": "Fashion & Retail",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/S._Robson_Walton_by_Gage_Skidmore.jpg/440px-S._Robson_Walton_by_Gage_Skidmore.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "20",
+    "name": "Jensen Huang",
+    "netWorth": 77,
+    "company": "Technology",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Jensen_Huang_20231109_%28cropped2%29.jpg/440px-Jensen_Huang_20231109_%28cropped2%29.jpg",
+    "country": "United States"
+  },
+  {
+    "id": "21",
+    "name": "Alice Walton",
+    "netWorth": 72.3,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "22",
+    "name": "David Thomson & family",
+    "netWorth": 67.8,
+    "company": "Media & Entertainment",
+    "image": "",
+    "country": "Canada"
+  },
+  {
+    "id": "23",
+    "name": "Julia Koch & family",
+    "netWorth": 64.3,
+    "company": "Diversified",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "24",
+    "name": "Zhong Shanshan",
+    "netWorth": 62.3,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "25",
+    "name": "Charles Koch & family",
+    "netWorth": 58.5,
+    "company": "Diversified",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "26",
+    "name": "Giovanni Ferrero",
+    "netWorth": 43.8,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "Italy"
+  },
+  {
+    "id": "27",
+    "name": "Prajogo Pangestu",
+    "netWorth": 43.4,
+    "company": "Diversified",
+    "image": "",
+    "country": "Indonesia"
+  },
+  {
+    "id": "28",
+    "name": "Zhang Yiming",
+    "netWorth": 43.4,
+    "company": "Technology",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "29",
+    "name": "Tadashi Yanai & family",
+    "netWorth": 42.8,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Japan"
+  },
+  {
+    "id": "30",
+    "name": "Phil Knight & family",
+    "netWorth": 40.9,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "31",
+    "name": "Mark Mateschitz",
+    "netWorth": 39.6,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "Austria"
+  },
+  {
+    "id": "32",
+    "name": "Klaus-Michael Kuehne",
+    "netWorth": 39.2,
+    "company": "Logistics",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "33",
+    "name": "Colin Huang",
+    "netWorth": 38.9,
+    "company": "Technology",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "34",
+    "name": "Stephen Schwarzman",
+    "netWorth": 38.8,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "35",
+    "name": "Jacqueline Mars",
+    "netWorth": 38.5,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "36",
+    "name": "John Mars",
+    "netWorth": 38.5,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "37",
+    "name": "Dieter Schwarz",
+    "netWorth": 38,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "38",
+    "name": "Li Ka-shing",
+    "netWorth": 37.3,
+    "company": "Diversified",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "39",
+    "name": "Shiv Nadar",
+    "netWorth": 36.9,
+    "company": "Technology",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "40",
+    "name": "Alain Wertheimer",
+    "netWorth": 36.8,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "France"
+  },
+  {
+    "id": "41",
+    "name": "Gerard Wertheimer",
+    "netWorth": 36.8,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "France"
+  },
+  {
+    "id": "42",
+    "name": "Ken Griffin",
+    "netWorth": 36.4,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "43",
+    "name": "MacKenzie Scott",
+    "netWorth": 35.6,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "44",
+    "name": "Thomas Peterffy",
+    "netWorth": 34,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "45",
+    "name": "Reinhold Wuerth & family",
+    "netWorth": 33.6,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "46",
+    "name": "William Ding",
+    "netWorth": 33.5,
+    "company": "Technology",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "47",
+    "name": "Savitri Jindal & family",
+    "netWorth": 33.5,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "48",
+    "name": "Gianluigi Aponte",
+    "netWorth": 33.1,
+    "company": "Logistics",
+    "image": "",
+    "country": "Switzerland"
+  },
+  {
+    "id": "49",
+    "name": "Rafaela Aponte-Diamant",
+    "netWorth": 33.1,
+    "company": "Logistics",
+    "image": "",
+    "country": "Switzerland"
+  },
+  {
+    "id": "50",
+    "name": "Changpeng Zhao",
+    "netWorth": 33,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Canada"
+  },
+  {
+    "id": "51",
+    "name": "Masayoshi Son",
+    "netWorth": 32.7,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Japan"
+  },
+  {
+    "id": "52",
+    "name": "Len Blavatnik",
+    "netWorth": 32.1,
+    "company": "Diversified",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "53",
+    "name": "Miriam Adelson & family",
+    "netWorth": 32,
+    "company": "Gambling & Casinos",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "54",
+    "name": "Fran�ois Pinault & family",
+    "netWorth": 31.6,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "France"
+  },
+  {
+    "id": "55",
+    "name": "Jim Simons",
+    "netWorth": 31.4,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "56",
+    "name": "Gina Rinehart",
+    "netWorth": 30.8,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Australia"
+  },
+  {
+    "id": "57",
+    "name": "Ma Huateng",
+    "netWorth": 30.2,
+    "company": "Technology",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "58",
+    "name": "Abigail Johnson",
+    "netWorth": 29,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "59",
+    "name": "Vagit Alekperov",
+    "netWorth": 28.6,
+    "company": "Energy",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "60",
+    "name": "Eduardo Saverin",
+    "netWorth": 28,
+    "company": "Technology",
+    "image": "",
+    "country": "Brazil"
+  },
+  {
+    "id": "61",
+    "name": "Lukas Walton",
+    "netWorth": 28,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "62",
+    "name": "Germ�n Larrea Mota Velasco & family",
+    "netWorth": 27.9,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Mexico"
+  },
+  {
+    "id": "63",
+    "name": "Lee Shau Kee",
+    "netWorth": 27.7,
+    "company": "Real Estate",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "64",
+    "name": "Jeff Yass",
+    "netWorth": 27.6,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "65",
+    "name": "Andrea Pignataro",
+    "netWorth": 27.5,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Italy"
+  },
+  {
+    "id": "66",
+    "name": "Low Tuck Kwong",
+    "netWorth": 27.4,
+    "company": "Energy",
+    "image": "",
+    "country": "Indonesia"
+  },
+  {
+    "id": "67",
+    "name": "Leonid Mikhelson & family",
+    "netWorth": 27.4,
+    "company": "Energy",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "68",
+    "name": "Stefan Quandt",
+    "netWorth": 27.3,
+    "company": "Automotive",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "69",
+    "name": "Dilip Shanghvi",
+    "netWorth": 26.7,
+    "company": "Healthcare",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "70",
+    "name": "Vladimir Lisin",
+    "netWorth": 26.6,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "71",
+    "name": "R. Budi Hartono",
+    "netWorth": 26.5,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Indonesia"
+  },
+  {
+    "id": "72",
+    "name": "Susanne Klatten",
+    "netWorth": 26.5,
+    "company": "Automotive",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "73",
+    "name": "Thomas Frist, Jr. & family",
+    "netWorth": 26.2,
+    "company": "Healthcare",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "74",
+    "name": "Daniel Gilbert",
+    "netWorth": 26.2,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "75",
+    "name": "Iris Fontbona & family",
+    "netWorth": 25.7,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Chile"
+  },
+  {
+    "id": "76",
+    "name": "Emmanuel Besnier",
+    "netWorth": 25.5,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "France"
+  },
+  {
+    "id": "77",
+    "name": "Michael Hartono",
+    "netWorth": 25.5,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "Indonesia"
+  },
+  {
+    "id": "78",
+    "name": "Alexey Mordashov & family",
+    "netWorth": 25.5,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "79",
+    "name": "John Menard, Jr.",
+    "netWorth": 25.2,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "80",
+    "name": "He Xiangjian & family",
+    "netWorth": 25.1,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "81",
+    "name": "Jack Ma",
+    "netWorth": 24.5,
+    "company": "Technology",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "82",
+    "name": "Elaine Marshall & family",
+    "netWorth": 24.5,
+    "company": "Diversified",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "83",
+    "name": "Autry Stephens",
+    "netWorth": 24.3,
+    "company": "Energy",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "84",
+    "name": "Eyal Ofer",
+    "netWorth": 24,
+    "company": "Diversified",
+    "image": "",
+    "country": "Israel"
+  },
+  {
+    "id": "85",
+    "name": "Vladimir Potanin",
+    "netWorth": 23.7,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "86",
+    "name": "Gennady Timchenko",
+    "netWorth": 23.4,
+    "company": "Energy",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "87",
+    "name": "Takemitsu Takizaki",
+    "netWorth": 23.1,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "Japan"
+  },
+  {
+    "id": "88",
+    "name": "Vinod Adani",
+    "netWorth": 23,
+    "company": "Diversified",
+    "image": "",
+    "country": "Cyprus"
+  },
+  {
+    "id": "89",
+    "name": "Robin Zeng",
+    "netWorth": 22.9,
+    "company": "Automotive",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "90",
+    "name": "Cyrus Poonawalla",
+    "netWorth": 21.3,
+    "company": "Healthcare",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "91",
+    "name": "Andrey Melnichenko & family",
+    "netWorth": 21.1,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "92",
+    "name": "Diane Hendricks",
+    "netWorth": 20.9,
+    "company": "Construction & Engineering",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "93",
+    "name": "Kushal Pal Singh",
+    "netWorth": 20.9,
+    "company": "Real Estate",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "94",
+    "name": "Vicky Safra & family",
+    "netWorth": 20.6,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Brazil"
+  },
+  {
+    "id": "95",
+    "name": "Eric Schmidt",
+    "netWorth": 20.6,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "96",
+    "name": "David Tepper",
+    "netWorth": 20.6,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "97",
+    "name": "Steve Cohen",
+    "netWorth": 19.8,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "98",
+    "name": "Kumar Birla",
+    "netWorth": 19.7,
+    "company": "Diversified",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "99",
+    "name": "Rick Cohen & family",
+    "netWorth": 19.6,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "100",
+    "name": "Rupert Murdoch & family",
+    "netWorth": 19.5,
+    "company": "Media & Entertainment",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "101",
+    "name": "Andrew Forrest & family",
+    "netWorth": 19,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Australia"
+  },
+  {
+    "id": "102",
+    "name": "Harold Hamm & family",
+    "netWorth": 18.5,
+    "company": "Energy",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "103",
+    "name": "Dustin Moskovitz",
+    "netWorth": 18.3,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "104",
+    "name": "Donald Bren",
+    "netWorth": 18,
+    "company": "Real Estate",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "105",
+    "name": "Renata Kellnerova & family",
+    "netWorth": 18,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Czech Republic"
+  },
+  {
+    "id": "106",
+    "name": "Michael Platt",
+    "netWorth": 18,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "107",
+    "name": "Radhakishan Damani",
+    "netWorth": 17.6,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "108",
+    "name": "John Fredriksen",
+    "netWorth": 16.9,
+    "company": "Logistics",
+    "image": "",
+    "country": "Cyprus"
+  },
+  {
+    "id": "109",
+    "name": "Eric Li",
+    "netWorth": 16.8,
+    "company": "Automotive",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "110",
+    "name": "Stefan Persson",
+    "netWorth": 16.6,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Sweden"
+  },
+  {
+    "id": "111",
+    "name": "James Ratcliffe",
+    "netWorth": 16.5,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "112",
+    "name": "Harry Triguboff",
+    "netWorth": 16.5,
+    "company": "Real Estate",
+    "image": "",
+    "country": "Australia"
+  },
+  {
+    "id": "113",
+    "name": "Jorge Paulo Lemann & family",
+    "netWorth": 16.4,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "Brazil"
+  },
+  {
+    "id": "114",
+    "name": "Lakshmi Mittal",
+    "netWorth": 16.4,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "115",
+    "name": "Ravi Jaipuria",
+    "netWorth": 16.2,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "116",
+    "name": "Stanley Kroenke",
+    "netWorth": 16.2,
+    "company": "Sports",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "117",
+    "name": "Jan Koum",
+    "netWorth": 16.1,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "118",
+    "name": "Karl Albrecht Jr. & family",
+    "netWorth": 15.9,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "119",
+    "name": "Beate Heister",
+    "netWorth": 15.9,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "120",
+    "name": "Idan Ofer",
+    "netWorth": 15.8,
+    "company": "Diversified",
+    "image": "",
+    "country": "Israel"
+  },
+  {
+    "id": "121",
+    "name": "Nicolas Puech",
+    "netWorth": 15.6,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "France"
+  },
+  {
+    "id": "122",
+    "name": "Pavel Durov",
+    "netWorth": 15.5,
+    "company": "Technology",
+    "image": "",
+    "country": "United Arab Emirates"
+  },
+  {
+    "id": "123",
+    "name": "Qin Yinglin",
+    "netWorth": 15.5,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "124",
+    "name": "Ray Dalio",
+    "netWorth": 15.4,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "125",
+    "name": "Philip Anschutz",
+    "netWorth": 15.3,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "126",
+    "name": "Leonard Lauder",
+    "netWorth": 15.1,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "127",
+    "name": "Li Xiting",
+    "netWorth": 15.1,
+    "company": "Healthcare",
+    "image": "",
+    "country": "Singapore"
+  },
+  {
+    "id": "128",
+    "name": "Peter Woo",
+    "netWorth": 15.1,
+    "company": "Real Estate",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "129",
+    "name": "Andreas von Bechtolsheim & family",
+    "netWorth": 14.8,
+    "company": "Technology",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "130",
+    "name": "George Kaiser",
+    "netWorth": 14.6,
+    "company": "Energy",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "131",
+    "name": "Wang Chuanfu",
+    "netWorth": 14.2,
+    "company": "Automotive",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "132",
+    "name": "Charlene de Carvalho-Heineken & family",
+    "netWorth": 14.1,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "Netherlands"
+  },
+  {
+    "id": "133",
+    "name": "David Duffield",
+    "netWorth": 14.1,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "134",
+    "name": "Henry Samueli",
+    "netWorth": 14.1,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "135",
+    "name": "Theo Albrecht, Jr. & family",
+    "netWorth": 14,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "136",
+    "name": "Leon Black",
+    "netWorth": 14,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "137",
+    "name": "Jerry Jones",
+    "netWorth": 13.8,
+    "company": "Sports",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "138",
+    "name": "Wang Wei",
+    "netWorth": 13.8,
+    "company": "Service",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "139",
+    "name": "David Green & family",
+    "netWorth": 13.7,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "140",
+    "name": "James Dyson",
+    "netWorth": 13.6,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "141",
+    "name": "David Sun",
+    "netWorth": 13.6,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "142",
+    "name": "John Tu",
+    "netWorth": 13.6,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "143",
+    "name": "Christy Walton",
+    "netWorth": 13.6,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "144",
+    "name": "Dang Yanbao",
+    "netWorth": 13.4,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "145",
+    "name": "Aliko Dangote",
+    "netWorth": 13.4,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "Nigeria"
+  },
+  {
+    "id": "146",
+    "name": "Ricardo Salinas Pliego & family",
+    "netWorth": 13.4,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Mexico"
+  },
+  {
+    "id": "147",
+    "name": "Alisher Usmanov",
+    "netWorth": 13.4,
+    "company": "Metals & Mining",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "148",
+    "name": "Mike Cannon-Brookes",
+    "netWorth": 13.3,
+    "company": "Technology",
+    "image": "",
+    "country": "Australia"
+  },
+  {
+    "id": "149",
+    "name": "Uday Kotak",
+    "netWorth": 13.3,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "150",
+    "name": "Mikhail Fridman",
+    "netWorth": 13.1,
+    "company": "Energy",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "151",
+    "name": "Joseph Lau",
+    "netWorth": 13.1,
+    "company": "Real Estate",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "152",
+    "name": "Scott Farquhar",
+    "netWorth": 13,
+    "company": "Technology",
+    "image": "",
+    "country": "Australia"
+  },
+  {
+    "id": "153",
+    "name": "Laurene Powell Jobs & family",
+    "netWorth": 12.8,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "154",
+    "name": "Goh Cheng Liang",
+    "netWorth": 12.7,
+    "company": "Manufacturing",
+    "image": "",
+    "country": "Singapore"
+  },
+  {
+    "id": "155",
+    "name": "George Roberts",
+    "netWorth": 12.7,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "156",
+    "name": "David Cheriton",
+    "netWorth": 12.6,
+    "company": "Technology",
+    "image": "",
+    "country": "Canada"
+  },
+  {
+    "id": "157",
+    "name": "Jeffery Hildebrand",
+    "netWorth": 12.6,
+    "company": "Energy",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "158",
+    "name": "Georg Stumpf",
+    "netWorth": 12.6,
+    "company": "Diversified",
+    "image": "",
+    "country": "Austria"
+  },
+  {
+    "id": "159",
+    "name": "Dhanin Chearavanont",
+    "netWorth": 12.5,
+    "company": "Diversified",
+    "image": "",
+    "country": "Thailand"
+  },
+  {
+    "id": "160",
+    "name": "Anders Holch Povlsen",
+    "netWorth": 12.5,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Denmark"
+  },
+  {
+    "id": "161",
+    "name": "Israel Englander",
+    "netWorth": 12.4,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "162",
+    "name": "Shahid Khan",
+    "netWorth": 12.2,
+    "company": "Automotive",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "163",
+    "name": "Johann Rupert & family",
+    "netWorth": 12.2,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "South Africa"
+  },
+  {
+    "id": "164",
+    "name": "Hasso Plattner & family",
+    "netWorth": 12.1,
+    "company": "Technology",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "165",
+    "name": "Kwong Siu-hing",
+    "netWorth": 12,
+    "company": "Real Estate",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "166",
+    "name": "Azim Premji",
+    "netWorth": 12,
+    "company": "Technology",
+    "image": "",
+    "country": "India"
+  },
+  {
+    "id": "167",
+    "name": "Henry Nicholas, III.",
+    "netWorth": 11.9,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "168",
+    "name": "Edward Johnson, IV.",
+    "netWorth": 11.8,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "169",
+    "name": "John Doerr",
+    "netWorth": 11.7,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "170",
+    "name": "Henry Kravis",
+    "netWorth": 11.7,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "171",
+    "name": "Eric Smidt",
+    "netWorth": 11.7,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "172",
+    "name": "Lu Xiangyang",
+    "netWorth": 11.6,
+    "company": "Automotive",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "173",
+    "name": "Andrew Beal",
+    "netWorth": 11.5,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "174",
+    "name": "Jay Y. Lee",
+    "netWorth": 11.5,
+    "company": "Technology",
+    "image": "",
+    "country": "South Korea"
+  },
+  {
+    "id": "175",
+    "name": "Michael Rubin",
+    "netWorth": 11.5,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "176",
+    "name": "Robert Kuok",
+    "netWorth": 11.4,
+    "company": "Diversified",
+    "image": "",
+    "country": "Malaysia"
+  },
+  {
+    "id": "177",
+    "name": "Giorgio Armani",
+    "netWorth": 11.3,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "Italy"
+  },
+  {
+    "id": "178",
+    "name": "Jay Chaudhry",
+    "netWorth": 11.3,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "179",
+    "name": "Charoen Sirivadhanabhakdi",
+    "netWorth": 11.3,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "Thailand"
+  },
+  {
+    "id": "180",
+    "name": "Brian Armstrong",
+    "netWorth": 11.2,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "181",
+    "name": "Ernesto Bertarelli",
+    "netWorth": 11.2,
+    "company": "Healthcare",
+    "image": "",
+    "country": "Switzerland"
+  },
+  {
+    "id": "182",
+    "name": "Bubba Cathy",
+    "netWorth": 11.2,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "183",
+    "name": "Dan Cathy",
+    "netWorth": 11.2,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "184",
+    "name": "Trudy Cathy White",
+    "netWorth": 11.2,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "185",
+    "name": "Lui Che Woo",
+    "netWorth": 11.2,
+    "company": "Gambling & Casinos",
+    "image": "",
+    "country": "Hong Kong"
+  },
+  {
+    "id": "186",
+    "name": "Wei Jianjun & family",
+    "netWorth": 11.2,
+    "company": "Automotive",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "187",
+    "name": "Sky Xu",
+    "netWorth": 11.2,
+    "company": "Fashion & Retail",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "188",
+    "name": "Melinda French Gates",
+    "netWorth": 11.1,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "189",
+    "name": "Robert Kraft",
+    "netWorth": 11.1,
+    "company": "Sports",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "190",
+    "name": "Brian Chesky",
+    "netWorth": 11,
+    "company": "Technology",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "191",
+    "name": "Barry Lam",
+    "netWorth": 11,
+    "company": "Technology",
+    "image": "",
+    "country": "Taiwan"
+  },
+  {
+    "id": "192",
+    "name": "Donald Newhouse",
+    "netWorth": 11,
+    "company": "Media & Entertainment",
+    "image": "",
+    "country": "United States"
+  },
+  {
+    "id": "193",
+    "name": "Mikhail Prokhorov",
+    "netWorth": 11,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Russia"
+  },
+  {
+    "id": "194",
+    "name": "Manuel Villar",
+    "netWorth": 11,
+    "company": "Real Estate",
+    "image": "",
+    "country": "Philippines"
+  },
+  {
+    "id": "195",
+    "name": "Jiang Rensheng & family",
+    "netWorth": 10.9,
+    "company": "Healthcare",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "196",
+    "name": "Lei Jun",
+    "netWorth": 10.9,
+    "company": "Technology",
+    "image": "",
+    "country": "China"
+  },
+  {
+    "id": "197",
+    "name": "Georg Schaeffler",
+    "netWorth": 10.9,
+    "company": "Automotive",
+    "image": "",
+    "country": "Germany"
+  },
+  {
+    "id": "198",
+    "name": "Marcel Herrmann Telles & family",
+    "netWorth": 10.9,
+    "company": "Food & Beverage",
+    "image": "",
+    "country": "Brazil"
+  },
+  {
+    "id": "199",
+    "name": "David Velez & family",
+    "netWorth": 10.8,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Colombia"
+  },
+  {
+    "id": "200",
+    "name": "Suleiman Kerimov & family",
+    "netWorth": 10.7,
+    "company": "Finance & Investments",
+    "image": "",
+    "country": "Russia"
+  }
+]
