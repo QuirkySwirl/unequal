@@ -1,115 +1,113 @@
-import React, { useState } from 'react'; // Import useState
-import { ShoppingCart, ThumbsUp, ThumbsDown } from 'lucide-react'; // Added ThumbsUp, ThumbsDown
-import { PlaygroundChoice } from '../types'; // Import the new type
+import React, { useState } from 'react';
+import { motion } from 'framer-motion'; // Import motion
+import { ShoppingCart, Share2, Check } from 'lucide-react';
+import { PlaygroundChoice } from '../types';
+// import { getCounts, updateCount } from '../lib/likeUtils';
 
 interface PurchaseCardProps {
-  // Replace 'item' prop with 'choice' prop
-  // item: PurchaseItem;
   choice: PlaygroundChoice;
-  onPurchase: () => void;
+  onAdd: () => void;
   disabled?: boolean;
+  entityName: string;
+  initialWealth: number;
 }
 
-// Destructure 'choice' instead of 'item'
-export function PurchaseCard({ choice, onPurchase, disabled }: PurchaseCardProps) {
-  // Removed unused 'id' from destructuring
-  const { name, cost, description, icon: Icon, sourceHint, category } = choice;
+export function PurchaseCard({ choice, onAdd, disabled, entityName, initialWealth }: PurchaseCardProps) {
+  const { name, cost, description, icon: Icon, sourceHint, category, imageUrl, shareText } = choice;
+  const [isAdded, setIsAdded] = useState(false); // State for 'Added' feedback
 
-  // State for like/dislike counts (visual only, resets on refresh)
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-  const [userAction, setUserAction] = useState<'like' | 'dislike' | null>(null);
-
-  // Determine card styling based on category
-  const cardStyle = category === 'socialGood'
-    ? 'bg-gradient-to-br from-emerald-50 to-green-100 border-emerald-300'
-    : 'bg-gradient-to-br from-amber-50 to-red-100 border-amber-300';
+  // Simplified card styling
+  const cardStyle = 'bg-white border border-gray-200';
   const buttonStyle = category === 'socialGood'
     ? 'bg-emerald-600 text-white hover:bg-emerald-700'
     : 'bg-amber-600 text-white hover:bg-amber-700';
-  const disabledButtonStyle = 'bg-gray-100 text-gray-400 cursor-not-allowed';
+  const disabledButtonStyle = 'bg-gray-200 text-gray-500 cursor-not-allowed';
+  const addedButtonStyle = 'bg-gray-400 text-white cursor-default'; // Style for 'Added' state
+
+  const handleAddToCart = () => {
+    if (!disabled && !isAdded) {
+      onAdd();
+      setIsAdded(true);
+      // Optional: Reset 'Added' state after a delay
+      setTimeout(() => setIsAdded(false), 1500);
+    }
+  };
+
+  const handleShare = () => {
+    const textToShare = shareText
+      .replace(/\[NAME\]/g, entityName || 'Selected Entity')
+      .replace(/\[FORTUNE\]/g, initialWealth ? initialWealth.toLocaleString(undefined, {maximumFractionDigits: 0}) : '???')
+      .replace('[Link]', window.location.href);
+
+    navigator.clipboard.writeText(textToShare)
+      .then(() => alert('Copied share text to clipboard!'))
+      .catch(err => console.error('Failed to copy text: ', err));
+  };
 
   return (
-    <div className={`flex flex-col overflow-hidden transition-all border shadow-lg rounded-xl hover:shadow-xl ${cardStyle}`}>
-      {/* Optional: Add an area for an image or keep it text-focused */}
-      {/* <div className="relative h-40 sm:h-48"> ... Image logic ... </div> */}
+    <div className={`flex flex-col overflow-hidden transition-all border shadow-md rounded-xl hover:shadow-lg ${cardStyle}`}>
+      {/* Image Area */}
+      <div className="relative w-full aspect-[16/9] bg-gray-200">
+        {imageUrl ? (
+          <img src={imageUrl} alt={name} className="absolute inset-0 object-cover w-full h-full" />
+        ) : (
+          // Fallback if no image URL
+          <div className="flex items-center justify-center w-full h-full">
+            {Icon ? <Icon className="w-12 h-12 text-gray-400" /> : <span className="text-gray-400">?</span>}
+          </div>
+        )}
+      </div>
 
       {/* Content Area */}
-      <div className="flex flex-col flex-grow p-4 space-y-3">
-        {/* Icon and Name */}
-        <div className="flex items-center gap-2">
-          {Icon && <Icon className="flex-shrink-0 w-5 h-5 text-indigo-700" />}
-          <h3 className="text-base font-semibold text-gray-900 sm:text-lg">{name}</h3>
-        </div>
-
+      <div className="flex flex-col flex-grow p-4 space-y-2">
+        {/* Name */}
+        <h3 className="text-base font-semibold text-gray-900 sm:text-lg">{name}</h3>
         {/* Cost */}
-        <p className="font-mono text-xl font-bold text-gray-800 sm:text-2xl">
+        <p className="font-mono text-lg font-bold text-gray-800 sm:text-xl">
           ${cost.toLocaleString()} Billion
         </p>
-
-        {/* Description (Contrast Text) */}
-        <p className="flex-grow text-sm text-gray-700">
-          {description}
-        </p>
-
+        {/* Description */}
+        <p className="flex-grow text-sm text-gray-700">{description}</p>
         {/* Source Hint */}
-        <p className="text-xs italic text-gray-500">
-          {sourceHint}
-        </p>
+        <p className="text-xs italic text-gray-500">{sourceHint}</p>
 
-        {/* Like/Dislike Buttons */}
-        <div className="flex items-center justify-center gap-4 mt-2">
-          <button
-            onClick={() => {
-              if (userAction !== 'like') {
-                setLikes(prev => prev + 1);
-                if (userAction === 'dislike') setDislikes(prev => prev - 1);
-                setUserAction('like');
-              } else {
-                setLikes(prev => prev - 1);
-                setUserAction(null);
-              }
-              // TODO: Add funny animation/feedback
-            }}
-            className={`p-1 rounded-full transition-colors ${userAction === 'like' ? 'bg-green-100 text-green-600' : 'text-gray-400 hover:text-green-500'}`}
-            aria-label="Like this choice"
-          >
-            <ThumbsUp className="w-4 h-4" />
-          </button>
-          <span className="text-xs font-medium text-gray-600 min-w-[1rem] text-center">{likes > 0 ? likes : ''}</span>
-          <button
-             onClick={() => {
-              if (userAction !== 'dislike') {
-                setDislikes(prev => prev + 1);
-                 if (userAction === 'like') setLikes(prev => prev - 1);
-                setUserAction('dislike');
-              } else {
-                 setDislikes(prev => prev - 1);
-                 setUserAction(null);
-              }
-               // TODO: Add funny animation/feedback
-            }}
-            className={`p-1 rounded-full transition-colors ${userAction === 'dislike' ? 'bg-red-100 text-red-600' : 'text-gray-400 hover:text-red-500'}`}
-            aria-label="Dislike this choice"
-          >
-            <ThumbsDown className="w-4 h-4" />
-          </button>
-           <span className="text-xs font-medium text-gray-600 min-w-[1rem] text-center">{dislikes > 0 ? dislikes : ''}</span>
-        </div>
+        {/* Removed Like/Dislike Buttons */}
 
-        {/* Purchase Button */}
-        <button
-          onClick={onPurchase}
-          disabled={disabled}
-          className={`
-            w-full flex items-center justify-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg
-            text-sm sm:text-base font-medium transition-colors mt-auto
-            ${disabled ? disabledButtonStyle : buttonStyle}
-          `}
-        >
-          <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
-          {disabled ? 'Cannot Afford' : 'Make This Choice'}
-        </button>
+         {/* Action Buttons Row */}
+         <div className="flex items-center gap-2 pt-2 mt-auto">
+            {/* Add to Cart Button */}
+            <motion.button
+              onClick={handleAddToCart}
+              disabled={disabled || isAdded}
+              className={`
+                flex-grow flex items-center justify-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg
+                text-sm sm:text-base font-medium transition-colors
+                ${disabled ? disabledButtonStyle : (isAdded ? addedButtonStyle : buttonStyle)}
+              `}
+              // Add animation for the 'Added' state
+              animate={isAdded ? { scale: [1, 1.1, 1], transition: { duration: 0.3 } } : {}}
+            >
+              {isAdded ? (
+                <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-1">
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5" /> Added
+                </motion.span>
+              ) : (
+                <>
+                  <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
+                  {disabled ? 'Cannot Afford' : 'Add to Cart'}
+                </>
+              )}
+            </motion.button>
+
+             {/* Share Button */}
+             <button
+                onClick={handleShare}
+                className="p-2 text-gray-500 transition-colors rounded-lg hover:bg-gray-100 hover:text-indigo-600"
+                aria-label="Share this choice"
+             >
+                <Share2 className="w-4 h-4 sm:w-5 sm:h-5" />
+             </button>
+         </div>
       </div>
     </div>
   );

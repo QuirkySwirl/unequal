@@ -36,4 +36,6 @@ export interface PlaygroundChoice {
   description: string; // The engaging description/contrast text
   sourceHint: string; // e.g., "(Source Hint: Based on UN WFP...)"
   icon?: React.ElementType; // Optional Lucide icon (import React from 'react'; needed)
+  imageUrl?: string; // Optional URL for a representative image
+  shareText: string; // Pre-formatted text for sharing
 }
