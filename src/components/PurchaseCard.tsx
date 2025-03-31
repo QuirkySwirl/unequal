@@ -1,61 +1,114 @@
-import React from 'react';
-import { ShoppingCart, Info } from 'lucide-react';
-import { PurchaseItem } from '../types';
+import React, { useState } from 'react'; // Import useState
+import { ShoppingCart, ThumbsUp, ThumbsDown } from 'lucide-react'; // Added ThumbsUp, ThumbsDown
+import { PlaygroundChoice } from '../types'; // Import the new type
 
 interface PurchaseCardProps {
-  item: PurchaseItem;
+  // Replace 'item' prop with 'choice' prop
+  // item: PurchaseItem;
+  choice: PlaygroundChoice;
   onPurchase: () => void;
   disabled?: boolean;
 }
 
-export function PurchaseCard({ item, onPurchase, disabled }: PurchaseCardProps) {
+// Destructure 'choice' instead of 'item'
+export function PurchaseCard({ choice, onPurchase, disabled }: PurchaseCardProps) {
+  // Removed unused 'id' from destructuring
+  const { name, cost, description, icon: Icon, sourceHint, category } = choice;
+
+  // State for like/dislike counts (visual only, resets on refresh)
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
+  const [userAction, setUserAction] = useState<'like' | 'dislike' | null>(null);
+
+  // Determine card styling based on category
+  const cardStyle = category === 'socialGood'
+    ? 'bg-gradient-to-br from-emerald-50 to-green-100 border-emerald-300'
+    : 'bg-gradient-to-br from-amber-50 to-red-100 border-amber-300';
+  const buttonStyle = category === 'socialGood'
+    ? 'bg-emerald-600 text-white hover:bg-emerald-700'
+    : 'bg-amber-600 text-white hover:bg-amber-700';
+  const disabledButtonStyle = 'bg-gray-100 text-gray-400 cursor-not-allowed';
+
   return (
-    <div className="flex flex-col overflow-hidden transition-all bg-white shadow-lg rounded-xl hover:shadow-xl">
-      {/* Responsive image height */}
-      <div className="relative h-40 sm:h-48">
-        <img
-          src={item.image}
-          alt={item.name}
-          className="object-cover w-full h-full"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        {/* Adjusted padding */}
-        <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-           {/* Responsive text size */}
-          <h3 className="text-lg font-bold text-white sm:text-xl">{item.name}</h3>
-           {/* Responsive text size */}
-          <p className="font-mono text-sm text-white/90 sm:text-base">
-            ${item.price.toLocaleString()} Billion
-          </p>
-        </div>
-      </div>
+    <div className={`flex flex-col overflow-hidden transition-all border shadow-lg rounded-xl hover:shadow-xl ${cardStyle}`}>
+      {/* Optional: Add an area for an image or keep it text-focused */}
+      {/* <div className="relative h-40 sm:h-48"> ... Image logic ... </div> */}
 
-      {/* Adjusted padding and spacing */}
-      <div className="flex-grow p-3 space-y-3 sm:p-4 sm:space-y-4">
-         {/* Responsive text size and icon size */}
-        <div className="flex items-start gap-2 text-xs text-gray-600 sm:text-sm">
-          <Info className="flex-shrink-0 w-4 h-4 text-indigo-500 sm:w-5 sm:h-5" />
-          <p>{item.comparison}</p>
+      {/* Content Area */}
+      <div className="flex flex-col flex-grow p-4 space-y-3">
+        {/* Icon and Name */}
+        <div className="flex items-center gap-2">
+          {Icon && <Icon className="flex-shrink-0 w-5 h-5 text-indigo-700" />}
+          <h3 className="text-base font-semibold text-gray-900 sm:text-lg">{name}</h3>
         </div>
 
-        {/* Spacer to push button down */}
-        <div className="flex-grow"></div>
+        {/* Cost */}
+        <p className="font-mono text-xl font-bold text-gray-800 sm:text-2xl">
+          ${cost.toLocaleString()} Billion
+        </p>
 
+        {/* Description (Contrast Text) */}
+        <p className="flex-grow text-sm text-gray-700">
+          {description}
+        </p>
+
+        {/* Source Hint */}
+        <p className="text-xs italic text-gray-500">
+          {sourceHint}
+        </p>
+
+        {/* Like/Dislike Buttons */}
+        <div className="flex items-center justify-center gap-4 mt-2">
+          <button
+            onClick={() => {
+              if (userAction !== 'like') {
+                setLikes(prev => prev + 1);
+                if (userAction === 'dislike') setDislikes(prev => prev - 1);
+                setUserAction('like');
+              } else {
+                setLikes(prev => prev - 1);
+                setUserAction(null);
+              }
+              // TODO: Add funny animation/feedback
+            }}
+            className={`p-1 rounded-full transition-colors ${userAction === 'like' ? 'bg-green-100 text-green-600' : 'text-gray-400 hover:text-green-500'}`}
+            aria-label="Like this choice"
+          >
+            <ThumbsUp className="w-4 h-4" />
+          </button>
+          <span className="text-xs font-medium text-gray-600 min-w-[1rem] text-center">{likes > 0 ? likes : ''}</span>
+          <button
+             onClick={() => {
+              if (userAction !== 'dislike') {
+                setDislikes(prev => prev + 1);
+                 if (userAction === 'like') setLikes(prev => prev - 1);
+                setUserAction('dislike');
+              } else {
+                 setDislikes(prev => prev - 1);
+                 setUserAction(null);
+              }
+               // TODO: Add funny animation/feedback
+            }}
+            className={`p-1 rounded-full transition-colors ${userAction === 'dislike' ? 'bg-red-100 text-red-600' : 'text-gray-400 hover:text-red-500'}`}
+            aria-label="Dislike this choice"
+          >
+            <ThumbsDown className="w-4 h-4" />
+          </button>
+           <span className="text-xs font-medium text-gray-600 min-w-[1rem] text-center">{dislikes > 0 ? dislikes : ''}</span>
+        </div>
+
+        {/* Purchase Button */}
         <button
           onClick={onPurchase}
           disabled={disabled}
           className={`
             w-full flex items-center justify-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg
-            text-sm sm:text-base font-medium transition-colors
-            ${disabled
-              ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-              : 'bg-indigo-600 text-white hover:bg-indigo-700'
-            }
+            text-sm sm:text-base font-medium transition-colors mt-auto
+            ${disabled ? disabledButtonStyle : buttonStyle}
           `}
         >
-           {/* Responsive icon size */}
           <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
-          {disabled ? 'Not Enough Money' : 'Purchase'}
+          {disabled ? 'Cannot Afford' : 'Make This Choice'}
         </button>
       </div>
     </div>
