@@ -1,77 +1,106 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Coins } from 'lucide-react';
+// Removed unused icons: Building2, LandmarkIcon, Ship, User
 
 interface WealthStackVisualizationProps {
   wealth: number; // Wealth in Billions USD
 }
 
-// Constants for calculation (approximate)
-const BILL_THICKNESS_MM = 0.10922; // Thickness of a US bill
-const METERS_PER_MM = 0.001;
+// Constants
+const BILL_THICKNESS_M = 0.00010922;
+const EARTH_RADIUS_KM = 6371;
+const MOON_DISTANCE_KM = 384400;
 
-// Reference objects (heights in meters) - Add more as needed
-const REFERENCE_OBJECTS = [
-  { name: 'Eiffel Tower', height: 330 },
-  { name: 'Statue of Liberty (incl. pedestal)', height: 93 },
-  { name: 'Boeing 747 (length)', height: 76.3 }, // Using length as 'height' for comparison
-  { name: 'Average Human', height: 1.7 },
-];
+// Removed unused REFERENCE_OBJECTS constant
+// const REFERENCE_OBJECTS = [ ... ];
 
 export function WealthStackVisualization({ wealth }: WealthStackVisualizationProps) {
-  // Calculate the height of the wealth stack in meters
-  const totalBills = wealth * 1e9 / 100; // Total number of $100 bills
-  const stackHeightMeters = totalBills * BILL_THICKNESS_MM * METERS_PER_MM;
+  const totalBills = wealth * 1e9 / 100;
+  const stackHeightMeters = totalBills * BILL_THICKNESS_M;
+  const stackHeightKm = stackHeightMeters / 1000;
 
-  // Determine a suitable scale for visualization
-  // This needs refinement - find the max height (stack or reference) and scale down
-  const maxHeight = Math.max(stackHeightMeters, ...REFERENCE_OBJECTS.map(o => o.height));
-  // Removed the first declaration of scaleFactor
+  let comparisonText = '';
+  if (stackHeightKm > MOON_DISTANCE_KM) { comparisonText = `Reaches past the Moon (${(stackHeightKm / MOON_DISTANCE_KM).toFixed(1)}x)!`; }
+  else if (stackHeightKm > EARTH_RADIUS_KM * 2) { comparisonText = `Taller than Earth's diameter! (${stackHeightKm.toLocaleString(undefined, {maximumFractionDigits: 0})} km)`; }
+  else if (stackHeightKm > 1000) { comparisonText = `Extends deep into space (${stackHeightKm.toLocaleString(undefined, {maximumFractionDigits: 0})} km)`; }
+  else if (stackHeightKm > 1) { comparisonText = `That's ${stackHeightKm.toFixed(1)} km high!`; }
+  else { comparisonText = `That's ${stackHeightMeters.toFixed(0)} meters high!`; }
 
-  // Adjusted scale factor for potentially smaller height on mobile
-  const scaleFactor = (window.innerWidth < 640 ? 250 : 300) / maxHeight; // Target max visual height (e.g., 250px mobile, 300px desktop)
+  // Removed unused visualStackHeight and scaleFactor as they aren't needed for this animation approach
 
-  const visualStackHeight = stackHeightMeters * scaleFactor;
+  // Animation Variants with Looping
+  const containerVariants = {
+    initial: { scale: 1, y: 0 },
+    animate: { scale: [1, 0.05, 1], y: ["0%", "-40%", "0%"] }, // Zoom out and back in
+    transition: { duration: 5, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 } // Loop the zoom
+  };
+
+  // Simple opacity pulse for the stack
+  const stackVariants = {
+    initial: { opacity: 0.5 },
+    animate: { opacity: [0.5, 1, 0.5] }, // Pulse opacity
+    transition: { duration: 2, ease: "easeInOut", repeat: Infinity } // Loop pulse
+  };
+
+  const textVariants = {
+     initial: { opacity: 0, y: 10 },
+     animate: { opacity: [0, 1, 1, 1, 0.5, 1] },
+     transition: { duration: 5, repeat: Infinity, repeatDelay: 1, times: [0, 0.1, 0.8, 0.9, 0.95, 1] }
+  }
 
   return (
-    // Adjusted padding
-    <div className="p-3 rounded-lg shadow sm:p-4 bg-gray-50">
-       {/* Adjusted text size and margin */}
-      <h3 className="mb-3 text-base font-semibold text-gray-800 sm:mb-4 sm:text-lg">Wealth Stacked Up ($100 Bills)</h3>
-       {/* Responsive height and gap */}
-      <div className="flex items-end justify-around h-[250px] sm:h-[350px] border-b border-gray-300 pb-2 gap-2 sm:gap-4">
-        {/* Wealth Stack */}
-        <div className="flex flex-col items-center text-center">
-           {/* Responsive width */}
-           <div
-             className="w-8 bg-green-600 border border-green-800 sm:w-12" // Simple rectangle for now
-             style={{ height: `${Math.max(visualStackHeight, 2)}px` }} // Min height of 2px
-             title={`Stack Height: ${stackHeightMeters.toLocaleString(undefined, {maximumFractionDigits: 0})} meters`}
-           ></div>
-            {/* Responsive text size */}
-           <span className="mt-1 text-[10px] font-medium sm:text-xs">Your Stack</span>
-           <span className="text-[10px] text-gray-600 sm:text-xs">({stackHeightMeters.toLocaleString(undefined, {maximumFractionDigits: 0})} m)</span>
-        </div>
+    <div className="p-4 overflow-hidden rounded-lg shadow bg-gradient-to-b from-blue-50 to-indigo-100">
+      <h3 className="mb-4 text-base font-semibold text-center text-gray-800 sm:text-lg">
+         <Coins className="inline w-5 h-5 mr-2 text-indigo-600" />
+         Wealth Stacked Up ($100 Bills)
+      </h3>
+      <div className="relative flex items-center justify-center w-full overflow-hidden h-80">
+         {/* Background */}
+         <div className="absolute inset-0 bg-gradient-to-b from-indigo-900 via-purple-900 to-black"></div>
+         <div className="absolute w-1 h-1 bg-white rounded-full top-1/4 left-1/4 opacity-80 animate-pulse"></div>
+         <div className="absolute w-1 h-1 delay-500 bg-white rounded-full top-1/2 left-3/4 opacity-60 animate-pulse"></div>
+         <div className="absolute w-1 h-1 delay-1000 bg-white rounded-full bottom-1/4 left-1/2 opacity-70 animate-pulse"></div>
 
-        {/* Reference Objects */}
-        {REFERENCE_OBJECTS.map(obj => {
-          const visualObjHeight = obj.height * scaleFactor;
-          return (
-            <div key={obj.name} className="flex flex-col items-center text-center">
-               {/* Responsive width */}
-              <div
-                className="w-6 bg-gray-400 border border-gray-600 sm:w-8" // Simple rectangle
-                style={{ height: `${Math.max(visualObjHeight, 2)}px` }}
-                title={`${obj.name}: ${obj.height} meters`}
-              ></div>
-               {/* Responsive text size */}
-              <span className="mt-1 text-[10px] font-medium sm:text-xs">{obj.name}</span>
-               <span className="text-[10px] text-gray-600 sm:text-xs">({obj.height} m)</span>
-            </div>
-          );
-        })}
+        {/* Animated container for zoom effect */}
+        <motion.div
+          className="relative w-48 h-48"
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+          transition={containerVariants.transition}
+        >
+          {/* Earth */}
+          <div className="absolute bottom-0 w-full transform -translate-x-1/2 rounded-t-full left-1/2 h-1/2 bg-gradient-to-t from-blue-600 to-blue-400">
+             <div className="absolute inset-0 bg-black rounded-t-full opacity-20"></div>
+          </div>
+          {/* Stack - Now uses opacity pulse, height is visually very large */}
+          <motion.div
+            className="absolute bottom-[50%] left-1/2 transform -translate-x-1/2 w-2 bg-green-400"
+            variants={stackVariants}
+            initial="initial"
+            animate="animate"
+            transition={stackVariants.transition}
+            style={{ height: '2000%' }} // Make it visually extend far beyond container
+            title={`Stack Height: ${stackHeightKm > 1 ? stackHeightKm.toFixed(1) + ' km' : stackHeightMeters.toFixed(0) + ' m'}`}
+          />
+        </motion.div>
+
+         {/* Text overlay */}
+         <motion.div
+            className="absolute inset-x-0 p-2 text-center bottom-4"
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            transition={textVariants.transition}
+         >
+            <p className="inline-block px-2 py-1 text-sm font-semibold text-white bg-black bg-opacity-50 rounded shadow-lg">
+               {comparisonText}
+            </p>
+         </motion.div>
       </div>
-       {/* Responsive text size */}
-      <p className="mt-2 text-[10px] italic text-gray-500 sm:text-xs">
-        Note: Visualization is scaled for comparison. Stack represents ${wealth} Billion in $100 bills.
+       <p className="mt-4 text-xs italic text-center text-gray-500">
+        Note: Animation shows relative scale. Stack represents ${wealth} Billion in $100 bills.
       </p>
     </div>
   );

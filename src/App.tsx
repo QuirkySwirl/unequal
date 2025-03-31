@@ -7,6 +7,7 @@ import { Playground } from './pages/Playground';
 import { AboutPage } from './pages/AboutPage'; // Import AboutPage
 import { TermsOfServicePage } from './pages/TermsOfServicePage'; // Import TermsOfServicePage
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'; // Import PrivacyPolicyPage
+import { NewLandingPage } from './pages/NewLandingPage'; // Import NewLandingPage
 import { Layout } from './components/Layout'; // Import Layout
 import allBillionaires from './data/billionaires.json'; // Import full list from JSON
 import { companies as initialCompanies } from './data/companies'; // Rename import
@@ -26,7 +27,8 @@ interface RestCountryInfo {
 type BillionaireWithFlag = Billionaire & { flagUrl?: string };
 
 
-function Home() {
+// Renamed the original Home component to preserve its logic
+function OldHome() {
   const navigate = useNavigate();
   const [displayBillionaires, setDisplayBillionaires] = useState<BillionaireWithFlag[]>([]);
   const [displayCompanies] = useState<Company[]>(initialCompanies); // Companies don't need shuffling/flags for now
@@ -156,7 +158,10 @@ function Home() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout><Home /></Layout>} />
+      {/* Point root path to the new landing page */}
+      <Route path="/" element={<Layout><NewLandingPage /></Layout>} />
+      {/* Add a route for the old home page, e.g., /select */}
+      <Route path="/select" element={<Layout><OldHome /></Layout>} />
       <Route path="/playground/:type/:id" element={<Layout><Playground /></Layout>} />
       <Route path="/about" element={<Layout><AboutPage /></Layout>} />
       <Route path="/terms" element={<Layout><TermsOfServicePage /></Layout>} />
