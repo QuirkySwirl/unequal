@@ -1,18 +1,3 @@
-export interface CountryGDP {
-  country: string;
-  gdp: number; // in billions USD
-  population: string;
-}
-
-export const countryGDPs: CountryGDP[] = [
-  { country: 'New Zealand', gdp: 247, population: '5.1M' },
-  { country: 'Portugal', gdp: 253, population: '10.3M' },
-  { country: 'Greece', gdp: 219, population: '10.7M' },
-  { country: 'Iraq', gdp: 207, population: '40.5M' },
-  { country: 'Ukraine', gdp: 161, population: '44.1M' },
-  { country: 'Kazakhstan', gdp: 220, population: '19.4M' },
-];
-
 export interface GlobalProblem {
   name: string;
   cost: number; // in billions USD

@@ -210,19 +210,23 @@ export function Playground() {
         {/* Wealth Comparisons & Visualizations (Keep below for now) */}
         <div className="mt-12 space-y-10 md:mt-16 md:space-y-14">
            <section>
-            <h2 className="flex items-center gap-2 mb-4 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-6"><BarChart className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> Compare to Country GDPs</h2>
+            <h2 className="flex items-center gap-2 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-2"><BarChart className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> Compare to Country GDPs</h2>
+            <p className="mb-4 text-sm text-gray-600 md:mb-6">See which national economies could fit entirely within this fortune.</p>
             <ComparisonChart wealth={wealthValue} type="gdp" entityName={entityDisplayName}/>
           </section>
            <section>
-            <h2 className="flex items-center gap-2 mb-4 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-6"><BarChart className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> Global Problems This Could Solve</h2>
+            <h2 className="flex items-center gap-2 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-2"><BarChart className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> Global Problems This Could Solve</h2>
+            <p className="mb-4 text-sm text-gray-600 md:mb-6">How many times over could this wealth address major global challenges?</p>
             <ComparisonChart wealth={wealthValue} type="problems" entityName={entityDisplayName}/>
           </section>
            <section>
-            <h2 className="flex items-center gap-2 mb-4 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-6"><Sparkles className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> The Absurdity of This Wealth</h2>
+            <h2 className="flex items-center gap-2 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-2"><Sparkles className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> The Absurdity of This Wealth</h2>
+            <p className="mb-4 text-sm text-gray-600 md:mb-6">Grasping the scale: everyday metrics applied to an extraordinary sum.</p>
             <AbsurdityMetrics wealth={wealthValue} entityName={entityDisplayName}/>
           </section>
            <section>
-             <h2 className="flex items-center gap-2 mb-4 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-6"><Coins className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> Wealth Stacked Up</h2>
+             <h2 className="flex items-center gap-2 text-xl font-semibold text-gray-900 sm:text-2xl md:mb-2"><Coins className="w-5 h-5 text-indigo-600 sm:w-6 sm:h-6" /> Wealth Stacked Up</h2>
+             <p className="mb-4 text-sm text-gray-600 md:mb-6">If this fortune was stacked in $100 bills, how high would it reach?</p>
             <WealthStackVisualization wealth={wealthValue} />
           </section>
         </div>
