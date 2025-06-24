@@ -131,65 +131,46 @@ interface RestCountryInfo {
     // Add other fields if needed later
 }
 
+import localGdpDataJson from '../data/gdpData.json'; // Import the local JSON data
+
 /**
- * Fetches and processes the latest GDP and Population data for top countries.
+ * Fetches and processes the latest GDP and Population data.
+ * Now uses local gdpData.json for GDP and fetches flags. Population is currently set to null.
  */
 export async function fetchCountryGDPs(): Promise<CountryGDPData[]> {
-  const indicators = ['NY.GDP.MKTP.CD', 'SP.POP.TOTL']; // GDP (Current US$), Population (Total)
-  const rawData = await fetchWorldBankData(indicators, 'all', '2018:2023'); // Fetch for all countries, recent years
+  // Type assertion for the imported JSON
+  const localGdpData = localGdpDataJson as Array<{
+    country: string;
+    countryCode: string;
+    gdp: number;
+    year: number;
+  }>;
 
-  if (!rawData) {
-    console.warn('Failed to fetch GDP/Population data from World Bank. Returning empty array.');
-    return []; // Return empty array on failure
-  }
+  const countriesWithGdp: CountryGDPData[] = localGdpData.map(item => ({
+    country: item.country,
+    iso3code: item.countryCode,
+    gdp: item.gdp, // Already in billions
+    population: null, // Population data not in gdpData.json, set to null
+    year: String(item.year), // Ensure year is a string
+    flagUrl: undefined // Will be fetched next
+  }));
 
-  // Find the latest data point for each country for GDP and Population
-  const latestDataMap = getLatestDataPerCountry(rawData);
-
-  const processedData: CountryGDPData[] = [];
-  // Need country names - fetch them separately or map from the raw data if available
-  // For simplicity, let's try to get names from the raw data points themselves
-  const countryNameMap = new Map<string, string>();
-  rawData.forEach((p: WorldBankIndicatorDataPoint) => {
-    if (p.countryiso3code && !countryNameMap.has(p.countryiso3code)) {
-      countryNameMap.set(p.countryiso3code, p.country.value);
-    }
-  });
-
-
-  latestDataMap.forEach((indicatorData, iso3code) => {
-    const gdpData = indicatorData['NY.GDP.MKTP.CD'];
-    const popData = indicatorData['SP.POP.TOTL'];
-    const countryName = countryNameMap.get(iso3code) || iso3code; // Fallback to code if name not found
-
-    // Only include countries with valid GDP data
-    if (gdpData && gdpData.value > 0) {
-      processedData.push({
-        country: countryName,
-        iso3code: iso3code,
-        gdp: Math.round(gdpData.value / 1e9), // Convert GDP to billions
-        population: popData ? (popData.value / 1e6).toFixed(1) + 'M' : null, // Format population
-        year: gdpData.year, // Use the year from the GDP data point
-      });
-    }
-  });
-
-  // Filter out aggregates (heuristic: check for 3-letter ISO code and exclude known aggregate names)
-  const filteredCountries = processedData.filter(
-    (c) => c.iso3code.length === 3 && !['WLD', 'OED', 'IBD', 'IDB', 'IDX', 'MIC', 'LIC', 'LMC', 'UMC', 'HIC', 'NOC', 'OEC', 'EUU', 'EMU', 'ECS', 'EAS', 'NAC', 'LCN', 'SAS', 'SSF', 'MEA', 'TSA', 'IDA', 'IBT', 'IDN', 'LTE', 'PRE', 'PST', 'SSA', 'SST', 'TEA', 'TEC', 'TLA', 'TMN'].includes(c.iso3code) && !c.country.includes('income') && !c.country.includes('dividend') && !c.country.includes('aggregate') && !c.country.includes('members') && !c.country.includes('blend')
-  );
-
-  // Sort by GDP descending
-  filteredCountries.sort((a, b) => (b.gdp ?? 0) - (a.gdp ?? 0));
-  const topCountries = filteredCountries.slice(0, 20); // Take top 20 actual countries
+  // The gdpData.json is already sorted by GDP descending and curated.
+  // We will use all countries from this JSON.
+  const countriesToProcess = countriesWithGdp;
 
   // --- Fetch Flags from REST Countries ---
-  const countryCodes = topCountries.map(c => c.iso3code).join(',');
+  // Using iso3code (which we mapped from countryCode)
+  const countryCodesForFlags = countriesToProcess.map(c => c.iso3code).filter(Boolean).join(',');
   const flagMap = new Map<string, string>();
 
-  if (countryCodes) {
+  if (countryCodesForFlags) {
       try {
-          const flagResponse = await axios.get<RestCountryInfo[]>(`https://restcountries.com/v3.1/alpha?codes=${countryCodes}&fields=cca3,flags`);
+          // Fetching flags for all countries in our JSON.
+          // REST Countries API might have a limit on URL length for many codes.
+          // A more robust solution might batch these requests if there are too many countries.
+          // For ~60-70 countries, a single request should be fine.
+          const flagResponse = await axios.get<RestCountryInfo[]>(`https://restcountries.com/v3.1/alpha?codes=${countryCodesForFlags}&fields=cca3,flags`);
           if (flagResponse.data) {
               flagResponse.data.forEach(countryInfo => {
                   flagMap.set(countryInfo.cca3, countryInfo.flags.svg || countryInfo.flags.png); // Prefer SVG
@@ -202,17 +183,15 @@ export async function fetchCountryGDPs(): Promise<CountryGDPData[]> {
           } else if (error instanceof Error) {
             errorMessage = error.message;
           }
-          console.warn(`Error fetching flags from REST Countries: ${errorMessage}`);
-          // Proceed without flags if fetching fails
+          console.warn(`Error fetching flags from REST Countries: ${errorMessage}. Proceeding without flags for some countries.`);
       }
   }
 
   // Add flag URLs to the data
-  const finalData = topCountries.map(country => ({
+  const finalData = countriesToProcess.map(country => ({
       ...country,
-      flagUrl: flagMap.get(country.iso3code),
+      flagUrl: flagMap.get(country.iso3code), // Will be undefined if flag not found
   }));
-
 
   return finalData;
 }

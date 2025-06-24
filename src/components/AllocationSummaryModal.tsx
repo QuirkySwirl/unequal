@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react'; // Added useState
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, BarChartHorizontal, Lightbulb } from 'lucide-react';
+import { X, BarChartHorizontal, Lightbulb, Share2, Link as LinkIcon, Copy, Twitter, Facebook, MessageSquare } from 'lucide-react'; // Added Share2, LinkIcon, Copy, Twitter, Facebook, MessageSquare (for Reddit-like)
 import { PlaygroundChoice } from '../types';
 import { billionaireChoices, companyChoices } from '../data/playgroundChoices'; // Import choices for comparison
 
@@ -89,6 +89,58 @@ export function AllocationSummaryModal({
   };
 
   const insights = generateInsights();
+  const [copiedLink, setCopiedLink] = useState(false);
+  const [copiedSummary, setCopiedSummary] = useState(false);
+
+  const handleCopyLink = () => {
+    // For now, copies the current page URL. Could be enhanced later.
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => {
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      })
+      .catch(err => console.error('Failed to copy link: ', err));
+  };
+
+  const handleCopySummary = () => {
+    const summaryText = [
+      `My Wealth Playground Spree with ${entityName}:`,
+      `Initial Fortune: $${initialWealth.toLocaleString()} B`,
+      `Total Allocated: $${totalAllocated.toLocaleString()} B`,
+      `Remaining: $${remaining.toLocaleString()} B`,
+      `--- Key Allocations ---`,
+      ...cartItems.map(item => `- ${item.name}: $${item.cost.toLocaleString()} B`),
+      `--- Insights ---`,
+      ...insights,
+    ].join('\n');
+
+    navigator.clipboard.writeText(summaryText)
+      .then(() => {
+        setCopiedSummary(true);
+        setTimeout(() => setCopiedSummary(false), 2000);
+      })
+      .catch(err => console.error('Failed to copy summary: ', err));
+  };
+
+  // Basic social share handlers (open new tab with share URL)
+  // These can be made more specific with pre-filled text later
+  const shareOnTwitter = () => {
+    const text = encodeURIComponent(`Check out my spending spree with ${entityName}'s fortune on Wealth Playground! Initial: $${initialWealth}B. I spent $${totalAllocated}B. #WealthPlayground`);
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+  };
+
+  const shareOnFacebook = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+  };
+
+  const shareOnReddit = () => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(`My Wealth Playground Spree with ${entityName}`);
+    window.open(`https://www.reddit.com/submit?url=${url}&title=${title}`, '_blank');
+  };
+
 
   return (
     <AnimatePresence>
@@ -146,8 +198,56 @@ export function AllocationSummaryModal({
                </p>
             </div>
 
+            {/* Share Section */}
+            <div className="pt-4 mt-6 border-t border-gray-200">
+              <h3 className="flex items-center gap-2 mb-3 text-md font-semibold text-gray-700">
+                <Share2 className="w-5 h-5 text-green-600" />
+                Share Your Spree!
+              </h3>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <button
+                  onClick={shareOnTwitter}
+                  className="flex items-center justify-center w-full gap-2 px-3 py-2 text-sm font-medium text-white bg-[#1DA1F2] rounded-md hover:bg-[#0c85d0] transition-colors"
+                >
+                  <Twitter className="w-4 h-4" /> Twitter
+                </button>
+                <button
+                  onClick={shareOnFacebook}
+                  className="flex items-center justify-center w-full gap-2 px-3 py-2 text-sm font-medium text-white bg-[#1877F2] rounded-md hover:bg-[#1056ad] transition-colors"
+                >
+                  <Facebook className="w-4 h-4" /> Facebook
+                </button>
+                <button
+                  onClick={shareOnReddit}
+                  className="flex items-center justify-center w-full gap-2 px-3 py-2 text-sm font-medium text-white bg-[#FF4500] rounded-md hover:bg-[#cc3700] transition-colors"
+                >
+                  <MessageSquare className="w-4 h-4" /> Reddit
+                </button>
+                <button
+                  onClick={handleCopyLink}
+                  className="flex items-center justify-center w-full gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+                >
+                  <LinkIcon className="w-4 h-4" /> {copiedLink ? 'Copied!' : 'Copy Link'}
+                </button>
+                <button
+                  onClick={handleCopySummary}
+                  className="flex items-center justify-center w-full col-span-2 gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md sm:col-span-1 hover:bg-gray-300 transition-colors"
+                >
+                  <Copy className="w-4 h-4" /> {copiedSummary ? 'Copied!' : 'Copy Summary'}
+                </button>
+              </div>
+            </div>
+
+
+             {/* Ad Placeholder */}
+            <div className="pt-3 mt-4 border-t border-gray-200">
+              <div className="py-3 text-xs text-center text-gray-400 bg-gray-100 rounded-md h-14">
+                [Modal Ad Placeholder - e.g., 300x50 or 320x50 banner]
+              </div>
+            </div>
+
              {/* Footer / Close Button */}
-             <div className="pt-4 mt-4 border-t border-gray-200">
+             <div className="pt-4 mt-4 "> {/* Removed border-t as ad placeholder has one */}
                 <button onClick={onClose} className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">
                     Close Analysis
                 </button>

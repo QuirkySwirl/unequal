@@ -121,13 +121,18 @@ export function NewLandingPage() {
           <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-700 sm:text-xl">
             {hoveredInfo || "Whose billions will you play with today?"}
           </p>
-          <button
+          <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-700 sm:text-xl md:text-2xl">
+            {hoveredInfo || "Whose billions will you play with today? Pick one below, or..."}
+          </p>
+          <motion.button
             onClick={handleFeelingLucky}
-            className="inline-flex items-center gap-2 px-6 py-3 mt-6 text-base font-medium text-white transition-colors bg-purple-600 rounded-lg shadow hover:bg-purple-700"
+            className="inline-flex items-center gap-3 px-8 py-4 mt-8 text-lg font-semibold text-white transition-all transform bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+            whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0] }} // Subtle wiggle on hover
+            transition={{ type: "spring", stiffness: 400, damping:10 }}
           >
-            <Shuffle className="w-5 h-5" />
+            <Shuffle className="w-6 h-6" />
             I'm Feeling Lucky!
-          </button>
+          </motion.button>
         </motion.div>
 
         {/* Chooser Grid */}

@@ -17,10 +17,16 @@ export function PurchaseCard({ choice, onAdd, disabled, entityName, initialWealt
   const [isAdded, setIsAdded] = useState(false); // State for 'Added' feedback
 
   // Simplified card styling
-  const cardStyle = 'bg-white border border-gray-200';
-  const buttonStyle = category === 'socialGood'
+  let cardStyle = 'bg-white border border-gray-200';
+  let buttonStyle = category === 'socialGood'
     ? 'bg-emerald-600 text-white hover:bg-emerald-700'
     : 'bg-amber-600 text-white hover:bg-amber-700';
+
+  if (category === 'sponsored') {
+    cardStyle = 'bg-white border border-purple-400 shadow-purple-100'; // Distinct border for sponsored
+    buttonStyle = 'bg-purple-600 text-white hover:bg-purple-700'; // Sponsored button color
+  }
+
   const disabledButtonStyle = 'bg-gray-200 text-gray-500 cursor-not-allowed';
   const addedButtonStyle = 'bg-gray-400 text-white cursor-default'; // Style for 'Added' state
 
@@ -48,6 +54,11 @@ export function PurchaseCard({ choice, onAdd, disabled, entityName, initialWealt
     <div className={`flex flex-col overflow-hidden transition-all border shadow-md rounded-xl hover:shadow-lg ${cardStyle}`}>
       {/* Image Area */}
       <div className="relative w-full aspect-[16/9] bg-gray-200">
+        {category === 'sponsored' && (
+          <div className="absolute top-2 right-2 z-10 bg-purple-600 text-white text-xs font-semibold px-2 py-0.5 rounded-full shadow">
+            Sponsored
+          </div>
+        )}
         {imageUrl ? (
           <img src={imageUrl} alt={name} className="absolute inset-0 object-cover w-full h-full" />
         ) : (

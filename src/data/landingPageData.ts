@@ -124,6 +124,18 @@ export const absurdityCalculations: AbsurdityCalculation[] = [
     },
     description: `Approximate time it would take to count the fortune in $100 bills at ${COUNTING_SPEED_BILLS_PER_SEC} bills/second, non-stop.`
   },
+  {
+    name: 'Average Salary Lifetimes', // Changed name slightly for clarity if needed
+    icon: Calculator, // Using Calculator icon
+    calculate: (wealth) => {
+      if (wealth <= 0) return '0 lifetimes';
+      const avgLifetimeEarnings = 60000 * 40; // avg_salary * career_years
+      if (avgLifetimeEarnings <= 0) return 'N/A';
+      const numLifetimes = (wealth * 1e9) / avgLifetimeEarnings;
+      return `${numLifetimes.toLocaleString(undefined, {maximumFractionDigits: 0})} lifetimes`;
+    },
+    description: "Number of average US working lifetimes (40 years, $60k/yr) to earn this much."
+  }
   // Add more calculations as needed
 ];
 

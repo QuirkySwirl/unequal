@@ -15,6 +15,12 @@ export function Footer() {
           {/* Add link to GitHub repo later */}
           {/* <a href="[Link to Repo]" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-indigo-600">GitHub</a> */}
         </nav>
+        {/* Ad Placeholder */}
+        <div className="mt-6 mb-4 text-center">
+          <div className="inline-block w-full max-w-md py-4 text-xs text-gray-400 bg-gray-200 rounded-md h-14 md:h-20">
+            [Footer Ad Placeholder - e.g., 728x90 or responsive banner]
+          </div>
+        </div>
         <p className="mt-4 text-xs">
           &copy; {currentYear} Wealth Playground. All data is for illustrative purposes.
         </p>
