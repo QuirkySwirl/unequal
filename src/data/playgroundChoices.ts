@@ -163,6 +163,16 @@ export const billionaireChoices: PlaygroundChoice[] = [
      icon: HelpCircle, imageUrl: 'https://images.unsplash.com/photo-1604351872870-66c634f61f6f?q=80&w=2806&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Example URL (using 'gold')
      shareText: "Decked out [NAME]'s bathrooms with 1000 solid gold toilets ($1B). Basic necessities covered. 🚽 #WealthPlayground [Link]",
    },
+  // --- Sponsored Content Example ---
+  {
+    id: 'b_sponsored_mars_trip',
+    name: "Weekend Trip to Mars (Sponsored by MarsLyfe™) 🚀✨",
+    scale: 'billionaire', category: 'sponsored', cost: 5, // Relatively cheap to make it attractive
+    description: "Experience the Red Planet! A luxury weekend getaway, including gourmet space food and a selfie with Olympus Mons. This trip is brought to you by MarsLyfe™, pioneering interplanetary tourism.",
+    sourceHint: "(Fictional Sponsored Content)",
+    icon: Rocket, imageUrl: 'https://images.unsplash.com/photo-1630694093411-a6c9c735bc18?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    shareText: "Just booked a Mars weekend ($5B) via MarsLyfe™ with [NAME]'s money! Hope the Wi-Fi is good. #Sponsored #MarsLyfe #WealthPlayground [Link]"
+  },
 ];
 
 // --- Company Scale Choices ---
