@@ -3,14 +3,9 @@ import { motion } from 'framer-motion';
 import { Coins } from 'lucide-react';
 // Removed unused icons: Building2, LandmarkIcon, Ship, User
 
-interface WealthStackVisualizationProps {
-  wealth: number; // Wealth in Billions USD
-}
-
-// Constants
-const BILL_THICKNESS_M = 0.00010922;
-const EARTH_RADIUS_KM = 6371;
-const MOON_DISTANCE_KM = 384400;
+// const BILL_THICKNESS_M = 0.00010922; // Duplicate removed
+// const EARTH_RADIUS_KM = 6371; // Duplicate removed
+// const MOON_DISTANCE_KM = 384400; // Duplicate removed
 
 import { Mountain, Rocket as RocketIcon, Globe2 } from 'lucide-react'; // Added Mountain, RocketIcon, Globe2 for reference points
 
