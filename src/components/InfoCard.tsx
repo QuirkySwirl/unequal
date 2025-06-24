@@ -1,7 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-interface InfoCardProps {
 import { Share2 } from 'lucide-react'; // Import Share2 icon
 
 interface InfoCardProps {
